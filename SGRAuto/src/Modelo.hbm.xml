@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Modelo" table="MODELO">
+		<id name="codigo" column="MOD_COD">
+			<generator class="sequence">
+				<param name="sequence">s_modelo</param>
+			</generator>
+		</id>
+		<property name="descricao" column="MOD_DESC" />
+		<many-to-one name="marca" class="br.com.sgrauto.entity.Marca"
+			column="MAR_COD" not-null="true" lazy="false" />
+	</class>
+</hibernate-mapping>

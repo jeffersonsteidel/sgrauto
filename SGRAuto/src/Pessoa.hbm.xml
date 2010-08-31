@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Pessoa" table="PESSOA">
+		<id name="codigo" column="PES_COD">
+			<generator class="sequence">
+				<param name="sequence">s_pessoa</param>
+			</generator>
+		</id>
+		<property name="nome" column="PES_NOME" />
+		<property name="rg" column="PES_RG" />
+		<property name="cpf" column="PES_CPF" />
+		<property name="cnh"  column="PES_CNH" />
+		<property name="dataNascimento" column="PES_DT_NASC" />
+		<property name="cargo" column="PES_CARGO" />
+		<property name="sexo" column="PES_SEXO" />
+		<property name="remuneracao" column="PES_REMUNERACAO" />
+		<property name="endereco" column="PES_END" />
+		<property name="bairro" column="PES_BAIRRO" />
+		<property name="cep" column="PES_CEP" />
+		<property name="telefone" column="PES_FONE" />
+		<property name="celular" column="PES_CEL" />
+		<property name="email" column="PES_EMAIL" />
+		<property name="indCliente" column="PES_IND_CLI" type="boolean" />
+		<property name="indFuncionario" column="PES_IND_FUNC" type="boolean" />
+		<property name="dataEntrada" column="PES_DT_ENTRADA" />
+		<property name="dataSaida" column="PES_DT_SAIDA" />
+		<property name="login" column="PES_LOGIN" />
+		<property name="senha" column="PES_SENHA" />
+		<property name="indGerente" column="PES_IND_GER" type="boolean" />
+		<property name="indDesat" column="PES_IND_DESAT" type="boolean" />
+		<many-to-one name="cidade" class="br.com.sgrauto.entity.Cidade"
+			column="CID_COD" not-null="true" lazy="false" />
+		<many-to-one name="filial" class="br.com.sgrauto.entity.Empresa"
+			column="EMP_COD" not-null="true" lazy="false" />	   
+	</class>
+</hibernate-mapping>

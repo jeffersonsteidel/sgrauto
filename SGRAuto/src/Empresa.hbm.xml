@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Empresa" table="EMPRESA">
+		<id name="codigo" column="EMP_COD">
+			<generator class="sequence">
+				<param name="sequence">s_empresa</param>
+			</generator>
+		</id>
+		<property name="cnpj" column="EMP_CNPJ" />
+		<property name="razaoSocial" column="EMP_RAZAO_SOCIAL" />
+		<property name="nomeFantasia" column="EMP_NOME_FANTASIA" />
+		<property name="tipoEmpresa"  column="EMP_TIPO_EMP" />
+		<property name="endereco" column="EMP_END" />
+		<property name="bairro" column="EMP_BAIRRO" />
+		<property name="cep" column="EMP_CEP" />
+		<property name="contato" column="EMP_CONTATO" />
+		<property name="telefone" column="EMP_TEL" />
+		<property name="indDesat" column="EMP_IND_DESAT" type="boolean" />
+		<many-to-one name="cidade" class="br.com.sgrauto.entity.Cidade"
+			column="CID_COD" not-null="true" lazy="false" />
+	</class>
+</hibernate-mapping>
