@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces
+Config 1.1//EN"
+"http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+
+	<application>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+		</locale-config>
+	</application>
+	
+	<managed-bean>
+		<managed-bean-name>acessoController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.AcessoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>automovelController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.AutomovelController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>cidadeController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.CidadeController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>empresaController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.EmpresaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>estadoController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.EstadoController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>marcaController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.MarcaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>modeloController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.ModeloController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>pessoaController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.PessoaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>vendaController</managed-bean-name>
+		<managed-bean-class>br.com.sgrauto.controller.VendaController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+</faces-config>

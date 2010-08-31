@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Automovel" table="AUTOMOVEL">
+		<id name="codigo" column="AUT_COD">
+			<generator class="sequence">
+				<param name="sequence">s_automovel</param>
+			</generator>
+		</id>
+		<property name="placa" column="AUT_PLACA" />
+		<property name="descricao" column="AUT_DESC" />
+		<property name="chassi" column="AUT_CHASSI" />
+		<property name="ano" column="AUT_ANO" />
+		<property name="anoModelo" column="AUT_ANO_MOD" />
+		<property name="cor" column="AUT_COR" />
+		<property name="combustivel" column="AUT_COMBUSTIVEL" />
+		<property name="kmRodados" column="AUT_KM_RODADO" />
+		<property name="kitGas" column="AUT_KIT_GAS" type="boolean" />
+		<property name="arCondicionado" column="AUT_AR_COND" type="boolean" />
+		<property name="arQuente" column="AUT_AR_QUENTE" type="boolean" />
+		<property name="arFrio" column="AUT_AR_FRIO" type="boolean" />
+		<property name="vidroEletrico" column="AUT_VIDRO_ELET" type="boolean" />
+		<property name="vidroVerde" column="AUT_VIDRO_VERDE" type="boolean" />
+		<property name="isulfilm" column="AUT_ISULFILM" type="boolean" />
+		<property name="airBag" column="AUT_AIR_BAG" type="boolean" />
+		<property name="abs" column="AUT_ABS" type="boolean" />
+		<property name="travaEletrica" column="AUT_TRAVA_ELET" type="boolean" />
+		<property name="alarme" column="AUT_ALARME" type="boolean" />
+		<property name="cdPlayer" column="AUT_CD_PLAYER" type="boolean" />
+		<property name="desembacador" column="AUT_DESEM_TRAS" type="boolean" />
+		<property name="limpadorTraseiro" column="AUT_LIMP_TRAS"
+			type="boolean" />
+		<property name="direcaoHidraulica" column="AUT_DIR_HIDR"
+			type="boolean" />
+		<property name="rodaLigaLeve" column="AUT_RODA_LIGA" type="boolean" />
+		<property name="cambioAutomatico" column="AUT_CAMB_AUT" type="boolean" />
+		<property name="outros" column="AUT_OUTROS" />
+		<property name="valorDeVenda" column="AUT_VALOR_VEN" />
+		<property name="valorDeCompra" column="AUT_VALOR_COM" />
+		<property name="dataEntrada" column="AUT_DT_ENT" />
+		<property name="dataSaida" column="AUT_DT_SAI" />
+		<property name="indVendido" column="AUT_IND_VENDIDO" type="boolean" />
+		<many-to-one name="modelo" class="br.com.sgrauto.entity.Modelo"
+			column="MOD_COD" not-null="true" lazy="false" />
+		<many-to-one name="filial" class="br.com.sgrauto.entity.Empresa"
+			column="EMP_COD" not-null="true" lazy="false" />
+	</class>
+</hibernate-mapping>

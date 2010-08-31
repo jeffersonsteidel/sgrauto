@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.AutomovelFotos" table="AUTOMOVEL_FOTOS">
+		<id name="codigo" column="FOT_COD">
+			<generator class="sequence">
+				<param name="sequence">s_automovel_fotos</param>
+			</generator>
+		</id>
+
+		<property name="foto" column="FOT_IMAGEM" />
+		<many-to-one name="automovel" class="br.com.sgrauto.entity.Automovel"
+			column="AUT_COD" not-null="true" lazy="false" />
+	</class>
+</hibernate-mapping>

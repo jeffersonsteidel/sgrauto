@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Venda" table="VENDA">
+		<id name="codigo" column="VEN_COD">
+			<generator class="sequence">
+				<param name="sequence">s_venda</param>
+			</generator>
+		</id>
+		<property name="data" column="VEN_DATA_HORA" type="date"/>
+		<property name="desconto" column="VEN_DESC" />
+		<property name="vendaPrazo" column="VEN_PRAZO" type="boolean" />
+		<property name="vendaVista" column="VEN_A_VISTA" type="boolean" />
+		<property name="valorEntrada" column="VEN_VLR_ENT" />
+		<property name="taxaJuros" column="VEN_TX_JUROS" />
+		<property name="qtdePrestacoes" column="VEN_QTD_PREST" />
+		<property name="valorPrestacao" column="VEND_VALOR_PREST" />
+		<property name="valorVista" column="VEN_VALOR_A_VISTA" />
+		<property name="valorPrazo" column="VEN_VALOR_A_PRAZO" />
+		<property name="valorTotal" column="VEN_VALOR_TOTAL" />
+		<many-to-one name="filial" class="br.com.sgrauto.entity.Empresa"
+			column="EMP_COD_FIL" not-null="true" lazy="false" />
+		<many-to-one name="funcionario" class="br.com.sgrauto.entity.Pessoa"
+			column="PES_COD_FUNC" not-null="true" lazy="false" />
+		<many-to-one name="cliente" class="br.com.sgrauto.entity.Pessoa"
+			column="PES_COD_CLI" not-null="true" lazy="false" />
+		<many-to-one name="automovel" class="br.com.sgrauto.entity.Automovel"
+			column="AUT_COD" not-null="true" lazy="false" />
+		<many-to-one  name="financeira" class="br.com.sgrauto.entity.Empresa"
+		 lazy="false" column="EMP_COD_FIN" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping 
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.sgrauto.entity.Cidade" table="CIDADE">
+		<id name="codigo" column="CID_COD">
+			<generator class="sequence">
+				<param name="sequence">s_cidade</param>
+			</generator>
+		</id>
+		<property name="descricao" column="CID_DESC" />
+		<many-to-one name="estado" class="br.com.sgrauto.entity.Estado"
+			column="EST_COD" not-null="true" lazy="false" />
+	</class>
+</hibernate-mapping>
