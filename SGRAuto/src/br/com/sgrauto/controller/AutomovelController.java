@@ -30,9 +30,9 @@ public class AutomovelController {
 
 	private Automovel automovel;
 	private AutomovelFotos automovelFotos;
-	private List<SelectItem> modelos;
-	private List<SelectItem> marcas;
-	private List<SelectItem> filiais;
+	private List<SelectItem> modelos = new ArrayList<SelectItem>();
+	private List<SelectItem> marcas = new ArrayList<SelectItem>();
+	private List<SelectItem> filiais  = new ArrayList<SelectItem>();
 	private String opcao;
 	private Boolean btExcluir;
 	private Integer anoInicial;
@@ -175,13 +175,13 @@ public class AutomovelController {
 	public void abrir() throws IOException {
 		automovel = new Automovel();
 		this.setAutomovelFotosList(new ArrayList<AutomovelFotos>());
+		modelos = new ArrayList<SelectItem>();
 		marcas = new ArrayList<SelectItem>();
+		filiais = new ArrayList<SelectItem>();
 		listarMarcas();
 		automovel.setModelo(new Modelo());
 		automovel.getModelo().setMarca(new Marca());
-		modelos = new ArrayList<SelectItem>();
 		automovel.setFilial(new Empresa());
-		filiais = new ArrayList<SelectItem>();
 		listarFiliais();
 		FacesContext.getCurrentInstance().getExternalContext().redirect(
 				"cadastrarAutomovel.jsp");

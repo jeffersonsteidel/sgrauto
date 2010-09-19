@@ -28,9 +28,9 @@ import br.com.sgrauto.validator.Validator;
 public class VendaController {
 
 	private Venda venda;
-	private List<SelectItem> filiais;
-	private List<SelectItem> vendedores;
-	private List<SelectItem> financeiras;
+	private List<SelectItem> filiais = new ArrayList<SelectItem>();
+	private List<SelectItem> vendedores = new ArrayList<SelectItem>();
+	private List<SelectItem> financeiras = new ArrayList<SelectItem>();
 	private String formaPagamento;
 	private Date dataInicial;
 	private Date dataFinal;
@@ -111,10 +111,10 @@ public class VendaController {
 		venda.setCliente(new Pessoa());
 		venda.setFinanceira(new Empresa());
 		venda.setFuncionario(new Pessoa());
+		formaPagamento = null;
 		filiais = new ArrayList<SelectItem>();
 		vendedores = new ArrayList<SelectItem>();
 		financeiras = new ArrayList<SelectItem>();
-		formaPagamento = null;
 		listarFiliais();
 		listarFinanceiras();
 		FacesContext.getCurrentInstance().getExternalContext().redirect(
