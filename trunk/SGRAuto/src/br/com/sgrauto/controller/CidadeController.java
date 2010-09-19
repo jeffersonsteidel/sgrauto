@@ -15,7 +15,7 @@ import br.com.sgrauto.entity.Estado;
 public class CidadeController {
 
 	private Cidade cidade;
-	private List<SelectItem> estados;
+	private List<SelectItem> estados = new ArrayList<SelectItem>();
 	private List<Cidade> cidadeList;
 
 	public Cidade getCidade() {

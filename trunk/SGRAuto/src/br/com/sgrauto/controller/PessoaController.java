@@ -24,9 +24,9 @@ import br.com.sgrauto.validator.Validator;
 public class PessoaController {
 
 	private Pessoa pessoa;
-	private List<SelectItem> estados;
-	private List<SelectItem> cidades;
-	private List<SelectItem> filiais;
+	private List<SelectItem> estados = new ArrayList<SelectItem>();
+	private List<SelectItem> cidades = new ArrayList<SelectItem>();
+	private List<SelectItem> filiais = new ArrayList<SelectItem>();
 	private List<Pessoa> pessoaList;
 	private String senhaTemporaria;
 	
@@ -83,8 +83,8 @@ public class PessoaController {
 		pessoa.getCidade().setEstado(new Estado());
 		pessoa.setFilial(new Empresa());
 		estados = new ArrayList<SelectItem>();
-		filiais = new ArrayList<SelectItem>();
 		cidades = new ArrayList<SelectItem>();
+		filiais = new ArrayList<SelectItem>();
 		listarEstados();
 		listarFiliais();
 		pessoa.setIndCliente(true);

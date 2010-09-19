@@ -15,7 +15,7 @@ import br.com.sgrauto.entity.Modelo;
 public class ModeloController{
 	
 	private Modelo modelo;
-	private List<SelectItem> marcas; 
+	private List<SelectItem> marcas = new ArrayList<SelectItem>(); 
 	private List<Modelo> modeloList;
 	
 	public Modelo getModelo() {

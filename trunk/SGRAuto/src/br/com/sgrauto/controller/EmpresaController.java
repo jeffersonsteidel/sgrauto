@@ -19,8 +19,8 @@ import br.com.sgrauto.validator.Validator;
 public class EmpresaController {
 
 	private Empresa empresa;
-	private List<SelectItem> estados;
-	private List<SelectItem> cidades;
+	private List<SelectItem> estados = new ArrayList<SelectItem>();
+	private List<SelectItem> cidades = new ArrayList<SelectItem>();
 	private List<Empresa> empresaList;
 
 	public Empresa getEmpresa() {
@@ -58,10 +58,10 @@ public class EmpresaController {
 	public void abrir() throws IOException {
 		empresa = new Empresa();
 		estados = new ArrayList<SelectItem>();
+		cidades = new ArrayList<SelectItem>();
 		listarEstados();
 		empresa.setCidade(new Cidade());
 		empresa.getCidade().setEstado(new Estado());
-		cidades = new ArrayList<SelectItem>();
 		FacesContext.getCurrentInstance().getExternalContext().redirect(
 				"cadastrarEmpresa.jsp");
 	}
