@@ -11,7 +11,7 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.exception.ConstraintViolationException;
 
-import br.com.sgrauto.encripty.Enclipty;
+import br.com.sgrauto.encripty.Encripty;
 import br.com.sgrauto.entity.Empresa;
 import br.com.sgrauto.entity.Pessoa;
 
@@ -124,7 +124,7 @@ public class PessoaDAO {
 	public Pessoa auteticar(Pessoa pessoa) throws NoSuchAlgorithmException {
 		Session session = HibernateUtility.getSessionFactory()
 				.getCurrentSession();
-		String senha = Enclipty.criptografaSenha(pessoa.getSenha());
+		String senha = Encripty.criptografaSenha(pessoa.getSenha());
 		session.beginTransaction();
 		return (Pessoa) session.createCriteria(Pessoa.class).add(
 				Restrictions.like("login", pessoa.getLogin().toUpperCase())).add(
