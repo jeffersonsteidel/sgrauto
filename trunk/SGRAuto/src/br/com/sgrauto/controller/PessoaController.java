@@ -14,7 +14,7 @@ import br.com.sgrauto.dao.CidadeDAO;
 import br.com.sgrauto.dao.EmpresaDAO;
 import br.com.sgrauto.dao.EstadoDAO;
 import br.com.sgrauto.dao.PessoaDAO;
-import br.com.sgrauto.encripty.Enclipty;
+import br.com.sgrauto.encripty.Encripty;
 import br.com.sgrauto.entity.Cidade;
 import br.com.sgrauto.entity.Empresa;
 import br.com.sgrauto.entity.Estado;
@@ -122,7 +122,7 @@ public class PessoaController {
 		}
 		pessoa.setIndDesat(false);
 		if ((pessoa.getSenha() != null && pessoa.getSenha() != "") && pessoa.getCodigo() == null) {
-			String senha = Enclipty.criptografaSenha(pessoa.getSenha());
+			String senha = Encripty.criptografaSenha(pessoa.getSenha());
 			pessoa.setSenha(senha);
 		}
 		if(senhaTemporaria != null &&  pessoa.getCodigo() != null){
