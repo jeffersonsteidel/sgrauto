@@ -7,7 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 import br.com.sgrauto.dao.PessoaDAO;
-import br.com.sgrauto.encripty.Enclipty;
+import br.com.sgrauto.encripty.Encripty;
 import br.com.sgrauto.entity.Pessoa;
 
 public class AcessoController {
@@ -89,7 +89,7 @@ public class AcessoController {
 	public void trocarSenha() throws IOException, NoSuchAlgorithmException {
 		pessoaLogada = (Pessoa) FacesContext.getCurrentInstance()
 				.getExternalContext().getSessionMap().get("usuarioLogado");
-		String senhaAtual = Enclipty.criptografaSenha(this.getSenhaAtual());
+		String senhaAtual = Encripty.criptografaSenha(this.getSenhaAtual());
 		if (!pessoaLogada.getSenha().equals(senhaAtual)) {
 			FacesMessage message = new FacesMessage(
 					FacesMessage.SEVERITY_ERROR, "Senha Atual incorreta!",
@@ -103,7 +103,7 @@ public class AcessoController {
 			FacesContext.getCurrentInstance().addMessage("", message);
 		} else {
 			PessoaDAO pessoaDAO = new PessoaDAO();
-			String novaSenha = Enclipty.criptografaSenha(this.getNovaSenha());
+			String novaSenha = Encripty.criptografaSenha(this.getNovaSenha());
 			pessoaLogada.setSenha(novaSenha);
 			pessoaDAO.save(pessoaLogada);
 		}
