@@ -75,6 +75,7 @@ function imprimir(){
 				</h:selectOneMenu>
 
 				<h:outputText value="Periodo: " />
+				<h:panelGrid columns="3">
 				<rich:calendar value="#{vendaController.dataInicial}"
 					locale="" popup="true" datePattern="dd/MM/yyyy" showApplyButton="#"
 					cellWidth="16px" cellHeight="22px" style="width:200px" />
@@ -82,6 +83,7 @@ function imprimir(){
 				<rich:calendar value="#{vendaController.dataFinal}" locale=""
 					popup="true" datePattern="dd/MM/yyyy" showApplyButton="#"
 					cellWidth="16px" cellHeight="22px" style="width:200px" />
+				</h:panelGrid>	
 			</h:panelGrid> <a4j:commandButton value="Pesquisar"
 				action="#{vendaController.listarPorFiltro}" reRender="form" /></div>
 
