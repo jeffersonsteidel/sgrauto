@@ -77,6 +77,7 @@ function imprimir(){
 				</h:inputText>
 
 				<h:outputText value="Data Entrada: " />
+				<h:panelGrid columns="3">
 				<rich:calendar
 					value="#{automovelController.dataEntradaInicial}"
 					locale="" popup="true" datePattern="dd/MM/yyyy" showApplyButton="#"
@@ -86,6 +87,7 @@ function imprimir(){
 					value="#{automovelController.dataEntradaFinal}" locale=""
 					popup="true" datePattern="dd/MM/yyyy" showApplyButton="#"
 					cellWidth="16px" cellHeight="22px" style="width:200px" />
+				</h:panelGrid>	
 			</h:panelGrid> <a4j:commandButton value="Pesquisar"
 				action="#{automovelController.listarPorFiltro}" reRender="form" /></div>
 
