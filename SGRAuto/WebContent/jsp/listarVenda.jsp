@@ -25,7 +25,7 @@
 			</rich:messages>
 			<rich:dataTable id="listaVenda"
 				value="#{vendaController.vendaList}" var="list" width="1200px"
-				columnClasses="center" rows="7" reRender="ds">
+				columnClasses="center" rows="10" reRender="ds">
 				<rich:column sortBy="#{list.automovel.placa}"
 					filterBy="#{list.automovel.placa}" filterEvent="onkeyup">
 					<f:facet name="header">
